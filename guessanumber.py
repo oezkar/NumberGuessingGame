@@ -41,9 +41,13 @@ game() # starting the first game
 
 # game continues while user inputs 1
 while(True):
-    g = int(input("Do you want to play again?\n1 Yes\n0 Quit\n"))
-    if (g == 1):
-        game()
-    else:
-        break
+    try:
+        g = int(input("Do you want to play again?\n1 Yes\n0 Quit\n"))
+        if (g == 1):
+            game()
+        else:
+            break
+
+    except ValueError:
+        print("Only 1 or 0 are accepted")
 
